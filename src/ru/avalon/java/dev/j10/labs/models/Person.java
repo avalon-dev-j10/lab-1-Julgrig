@@ -1,29 +1,52 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 /**
  * Представление о человеке.
  * <p>
  * С точки зрения задания человек представляется как сущность,
  * наделённая:
  * <ol>
- *     <li>именем;
- *     <li>паспортными данными;
- *     <li>пропиской по месту жительства.
+ * <li>именем;
+ * <li>паспортными данными;
+ * <li>пропиской по месту жительства.
  * </ol>
  */
 public class Person {
 
+    private String name;
+    private Passport passport;
+    private Address address;
+
+    public Person(String name, Passport passport, Address address) {
+        this.name = name;
+        this.passport = passport;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public Address getPersonAddress() {
+        return address;
+    }
     /*
      * TODO(Студент): Создайте класс Address.
      *
-     * 1. Добавте файл в пакет ru.avalon.java.dev.j10.labs.commons.
+     * 1. Добавте файл в пакет ru.avalon.java.dev.j10.labs.commons. СДЕЛАНО
      *
      * 2. Создайте класс, видимый из пакета. Подумайте о том
      *    Какое имя должен иметь класс, если он объявленн в этом
-     *    файле.
+     *    файле. СДЕЛАНО
      *
      * 3. Подумайте над тем, какие переменные должены быть
-     *    определены в классе.
+     *    определены в классе. СДЕЛАНО
      *
      * 4. Подумайте над тем, какие методы должны быть объявлены
      *    в классе.
@@ -50,8 +73,29 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
+
+        //  Если у человека есть Имя, Фамилия и Отчество, то возвращет Имя, Фимилию и Отчество, разделённые пробелом.
+        if (passport.getName() != null && passport.getSurname() != null && passport.getFathername() != null)
+            return passport.getName() + " " + passport.getSurname() + " " + passport.getFathername();
+        //  Если у человека нет Отчества, но есть второе имя, то возвращает
+        // Имя, Первую букву второго имени, и Фамилию, разделённые пробелом. После Инициала второго имени должна стоять точка.
+        // Например, "Джером К. Джером".
+        if (passport.getFathername() == null && passport.getSecondname() != null)
+
+            return passport.getName() + "  " + passport.getSecondname().substring(0, 1) + ".  " + passport.getSurname();
+
+        //  Если у человека нет ни Отчества ни Второго имени, а есть только Имя и Фамилия, то возвращает их, разделённые
+        // пробелом.
+        if (passport.getFathername() == null && passport.getSecondname() == null && passport.getName() != null && passport.getSurname() != null)
+
+            return passport.getName() + " " + passport.getSurname();
+
+
         return null;
+
+
     }
+
 
     /**
      * Возвращает адрес, по которому проживает человек.
@@ -65,6 +109,14 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+
+
+        Address address = passport.getAddress();
+
+        return address.getCountry() + " " + address.getPostcode() + " " +
+                address.getOblast() + " " + address.getDistrict() + " " + address.getCity() + " " + address.getStreet() + " " +
+                address.getHouse() + "  " + address.getBlock() + " " + address.getApt();
     }
+
+
 }
