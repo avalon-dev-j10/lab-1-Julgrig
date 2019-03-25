@@ -40,7 +40,7 @@ public class Main {
                 "Brighton Street", "12", 0, 23) );
         Address smithAddress = new Address("The United Kingdom", 44444, null, null, "London", "Queen's Street",
                 "12", 0, 34);
-        smith = new Person("Smith", smithPassport, smithAddress);
+        smith = new Person("Smit", smithPassport, smithAddress);
 
 
         /*
