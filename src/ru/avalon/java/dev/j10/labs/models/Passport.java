@@ -30,6 +30,11 @@ public class Passport {
     private LocalDate DateOfIssue;
     private String placeofissuing;
     private Address address;
+    
+     /* TODO (Проверка №1)    
+        Добавить коментарии к полям класса
+        Исправить неправильное написание перемменых.
+     */
 
     /*
      * TODO(Студент): Закончить определение класса.
@@ -68,6 +73,13 @@ public class Passport {
         this.placeofissuing = placeofissuing;
         this.address = address;
     }
+    
+    /*  TODO (Проверка №1)
+        Создать еще несколько конструкторов с меньшим количеством параметров
+        (некоторые поля класса в паспорт могут отсутствовать - второе имя, отчество, ...)
+        Конструктор с меньшим количеством параметров вызывать через конструктор
+        с большим кол. параметров или через конструктор с полным набором параметров класса.
+    */
 
     public String getSeries() {
         return series;

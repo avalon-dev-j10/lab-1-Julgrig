@@ -10,7 +10,10 @@ public class Address {
     private String house;
     private int block;
     private int apt;
-
+    
+     /* TODO (Проверка №1)    
+        Добавить коментарии к полям класса
+     */
 
     // создаем конструктор, чтобы проинициализировать поля класса
     public Address(String country, int postcode, String oblast, String district, String city, String street,
@@ -25,6 +28,13 @@ public class Address {
         this.block = block;
         this.apt = apt;
     }
+    
+    /*  TODO (Проверка №1)
+        Создать еще несколько конструкторов с меньшим количеством параметров
+        (некоторые поля класса в адресе могут отсутствовать)
+        Конструктор с меньшим количеством параметров вызывать через конструктор
+        с большим кол. параметров или через конструктор с полным набором параметров класса.
+    */
 
     // создаем геттеры, чтобы обратиться к переменным этого класса
     public String getCountry() {

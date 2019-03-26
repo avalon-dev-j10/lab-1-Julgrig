@@ -28,7 +28,7 @@ public class Main {
         Person ivanov = null;
         Person smith = null;
 
-        Passport ivanovPassport = new Passport("АК", 543246, "Иван", "Иванов", "Иванович", null,
+        Passport ivanovPassport = new Passport("АК", 543246, "Иван", "Иванов", "", null,
                 LocalDate.of(1970, 03, 20), LocalDate.of(2015, 04, 30), "OVD", new Address("Россия", 132245, null, null,
                 "Москва", "Ленинский проспект", "25А", 3, 125 ) );
         Address ivanovAddress = new Address("Россия", 192236, null, null, "Санкт-Петербург", "Невский проспект",
@@ -41,6 +41,11 @@ public class Main {
         Address smithAddress = new Address("The United Kingdom", 44444, null, null, "London", "Queen's Street",
                 "12", 0, 34);
         smith = new Person("Smit", smithPassport, smithAddress);
+        
+        /* TODO (Проверка №1)
+            Имя объявляется в классе Passport, в классе Person его не надо повторять
+            Исправить!
+        */
 
 
         /*
