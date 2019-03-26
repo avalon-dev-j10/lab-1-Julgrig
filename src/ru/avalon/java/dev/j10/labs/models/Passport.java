@@ -1,4 +1,5 @@
 package ru.avalon.java.dev.j10.labs.models;
+
 import ru.avalon.java.dev.j10.labs.commons.Address;
 
 import java.time.LocalDate;
@@ -8,28 +9,28 @@ import java.time.LocalDate;
  * <p>
  * Паспортные данные должны включать:
  * <ol>
- *  <li> серию и номер документа;
- *  <li> имя;
- *  <li> фамилию;
- *  <li> отчество;
- *  <li> второе имя;
- *  <li> день рождения;
- *  <li> дату выдачи;
- *  <li> орган, выдавший документ.
+ * <li> серию и номер документа;
+ * <li> имя;
+ * <li> фамилию;
+ * <li> отчество;
+ * <li> второе имя;
+ * <li> день рождения;
+ * <li> дату выдачи;
+ * <li> орган, выдавший документ.
  * </ol>
  */
 public class Passport {
 
-    private String series;
-    private int passportnumber;
-    private String name;
-    private String surname;
-    private String fathername;
-    private String secondname;
-    private LocalDate dateOfBirth;
-    private LocalDate DateOfIssue;
-    private String placeofissuing;
-    private Address address;
+    private String series;  // Серия паспорта
+    private int passportNumber; //  Номер паспорта
+    private String name;  // Имя
+    private String surname; // Фамилия
+    private String fatherName; // Отчество
+    private String secondName; //  Второе имя
+    private LocalDate dateOfBirth; // Дата рождения
+    private LocalDate dateOfIssue;   // Дата выдачи паспорта
+    private String placeOfIssuing; // Место выдачи паспорта
+    private Address address; // Адрес
     
      /* TODO (Проверка №1)    
         Добавить коментарии к полям класса
@@ -57,23 +58,56 @@ public class Passport {
      *    пределами пакета.    Ю : Поставить модификатор доступа  public к классу СДЕЛАНО
      */
 
-
-
-
-    public Passport(String series, int passportnumber, String name, String surname, String fathername, String secondname,
-                    LocalDate dateofbirth, LocalDate dateofissue, String placeofissuing, Address address) {
+    // Конструктор со всеми параметрами
+    public Passport(String series, int passportNumber, String name, String surname, String fatherName, String secondName,
+                    LocalDate dateOfBirth, LocalDate dateOfIssue, String placeOfIssuing, Address address) {
         this.series = series;
-        this.passportnumber = passportnumber;
+        this.passportNumber = passportNumber;
         this.name = name;
         this.surname = surname;
-        this.fathername = fathername;
-        this.secondname = secondname;
-        this.dateOfBirth = dateofbirth;
-        this.DateOfIssue = dateofissue;
-        this.placeofissuing = placeofissuing;
+        this.fatherName = fatherName;
+        this.secondName = secondName;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfIssue = dateOfIssue;
+        this.placeOfIssuing = placeOfIssuing;
         this.address = address;
     }
-    
+
+    // Конструктор без Отчества
+    public Passport(String series, int passportNumber, String name, String surname, String secondName,
+                    LocalDate dateOfBirth, LocalDate dateOfIssue, String placeOfIssuing, Address address) {
+        this(series, passportNumber, name, surname, null, secondName,
+                dateOfBirth, dateOfIssue, placeOfIssuing, address);
+
+    }
+
+    // Конструктор без Отчества и Второго имени
+    public Passport(String series, int passportNumber, String name, String surname,
+                    LocalDate dateOfBirth, LocalDate dateOfIssue, String placeOfIssuing, Address address) {
+        this(series, passportNumber, name, surname, null, null,
+                dateOfBirth, dateOfIssue, placeOfIssuing, address);
+    }
+
+    // Конструктор без второго имени
+
+    public Passport(Address address, String series, int passportNumber, String name, String surname, String fatherName,
+                    LocalDate dateOfBirth, LocalDate dateOfIssue, String placeOfIssuing) {
+        this(series, passportNumber, name, surname, fatherName, null,
+                dateOfBirth, dateOfIssue, placeOfIssuing, address);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*  TODO (Проверка №1)
         Создать еще несколько конструкторов с меньшим количеством параметров
         (некоторые поля класса в паспорт могут отсутствовать - второе имя, отчество, ...)
@@ -86,7 +120,7 @@ public class Passport {
     }
 
     public int getPassportnumber() {
-        return passportnumber;
+        return passportNumber;
     }
 
     public String getName() {
@@ -98,11 +132,11 @@ public class Passport {
     }
 
     public String getFathername() {
-        return fathername;
+        return fatherName;
     }
 
     public String getSecondname() {
-        return secondname;
+        return secondName;
     }
 
     public LocalDate getDateofbirth() {
@@ -110,11 +144,11 @@ public class Passport {
     }
 
     public LocalDate getDateofissue() {
-        return DateOfIssue;
+        return dateOfIssue;
     }
 
     public String getPlaceofissuing() {
-        return placeofissuing;
+        return placeOfIssuing;
     }
 
     public Address getAddress() {

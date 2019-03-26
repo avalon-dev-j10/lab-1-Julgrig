@@ -33,18 +33,18 @@ public class Main {
                 "Москва", "Ленинский проспект", "25А", 3, 125 ) );
         Address ivanovAddress = new Address("Россия", 192236, null, null, "Санкт-Петербург", "Невский проспект",
                 "100", 0, 100 );
-        ivanov = new Person("Иванов", ivanovPassport, ivanovAddress);
+        ivanov = new Person(ivanovPassport, ivanovAddress);
 
         Passport smithPassport = new Passport("RE", 444444, "John", "Smith", null, "Edvard", LocalDate.of(1980, 04, 12),
                 LocalDate.of(2018, 03, 30), "UK", new Address("The USA", 7777, null, null, "New York",
                 "Brighton Street", "12", 0, 23) );
         Address smithAddress = new Address("The United Kingdom", 44444, null, null, "London", "Queen's Street",
                 "12", 0, 34);
-        smith = new Person("Smit", smithPassport, smithAddress);
+        smith = new Person(smithPassport, smithAddress);
         
         /* TODO (Проверка №1)
             Имя объявляется в классе Passport, в классе Person его не надо повторять
-            Исправить!
+            Исправить!  СДЕЛАНО
         */
 
 

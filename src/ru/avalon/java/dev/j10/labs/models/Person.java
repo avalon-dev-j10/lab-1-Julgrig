@@ -15,7 +15,7 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  */
 public class Person {
 
-    private String name;
+
     private Passport passport;
     private Address address;
     
@@ -24,14 +24,9 @@ public class Person {
         Имя необходимо объявлять в классе Passport, здесь String name не должно быть
     */
 
-    public Person(String name, Passport passport, Address address) {
-        this.name = name;
+    public Person( Passport passport, Address address) {
         this.passport = passport;
         this.address = address;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Passport getPassport() {
@@ -118,13 +113,14 @@ public class Person {
 
         Address address = passport.getAddress();
 
-        return address.getCountry() + " " + address.getPostcode() + " " +
-                address.getOblast() + " " + address.getDistrict() + " " + address.getCity() + " " + address.getStreet() + " " +
+        return address.getCountry() + " " + address.getPostcode()  +
+                ((address.getOblast()== null) ? " " : address.getOblast() + " ") + ((address.getDistrict()==null) ? " ":
+                address.getDistrict() + " ") + address.getCity() + " " + address.getStreet() + " " +
                 address.getHouse() + "  " + address.getBlock() + " " + address.getApt();
         
         /*  TODO (Проверка №1)
             При выводе адресса null не надо выводить
-            Исправить логигу метода.
+            Исправить логигу метода. ИСПРАВЛЕНО
         */
     }
 
