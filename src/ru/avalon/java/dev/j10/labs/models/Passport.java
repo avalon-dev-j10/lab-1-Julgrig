@@ -30,7 +30,12 @@ public class Passport {
     private LocalDate dateOfBirth; // Дата рождения
     private LocalDate dateOfIssue;   // Дата выдачи паспорта
     private String placeOfIssuing; // Место выдачи паспорта
-    private Address address; // Адрес
+//    private Address address; // Адрес
+    
+    /*  TODO (Проверка №2)
+        Лишнее поле address (я закоментировал), оно уже есть в классе Person
+        без него все работает.
+    */
     
      /* TODO (Проверка №1)    
         Добавить коментарии к полям класса
@@ -70,7 +75,13 @@ public class Passport {
         this.dateOfBirth = dateOfBirth;
         this.dateOfIssue = dateOfIssue;
         this.placeOfIssuing = placeOfIssuing;
-        this.address = address;
+//        this.address = address;
+    
+/*  TODO (Проверка №2)    
+        У одного Person 2 address, должно быть 1.
+        Лишнее поле address (я закоментировал), оно уже есть в классе Person
+        без него все работает.
+    */
     }
 
     // Конструктор без Отчества
@@ -151,9 +162,13 @@ public class Passport {
         return placeOfIssuing;
     }
 
-    public Address getAddress() {
-        return address;
-    }
+//    public Address getAddress() {
+//        return address;
+//    }
+    
+    /*  TODO (Проверка №2)    
+        Лишний метод getAddress (я закоментировал), без него все работает.
+    */
 }
 
 

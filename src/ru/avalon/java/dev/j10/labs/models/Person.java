@@ -111,7 +111,12 @@ public class Person {
          */
 
 
-        Address address = passport.getAddress();
+//        Address address = passport.getAddress();
+
+        /*  TODO (Проверка №2)    
+            Лишнее поле address (я закоментировал), оно уже есть в классе Person
+            без него все работает.
+        */
 
         return address.getCountry() + " " + address.getPostcode()  +
                 ((address.getOblast()== null) ? " " : address.getOblast() + " ") + ((address.getDistrict()==null) ? " ":
