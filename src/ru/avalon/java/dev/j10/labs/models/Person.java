@@ -15,18 +15,18 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  */
 public class Person {
 
-    private String name;
+
     private Passport passport;
     private Address address;
+    
+    /* TODO (Проверка №1)
+        Добавить коментарии к полям и методам класса
+        Имя необходимо объявлять в классе Passport, здесь String name не должно быть
+    */
 
-    public Person(String name, Passport passport, Address address) {
-        this.name = name;
+    public Person( Passport passport, Address address) {
         this.passport = passport;
         this.address = address;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Passport getPassport() {
@@ -89,8 +89,8 @@ public class Person {
         if (passport.getFathername() == null && passport.getSecondname() == null && passport.getName() != null && passport.getSurname() != null)
 
             return passport.getName() + " " + passport.getSurname();
-
-
+        
+        
         return null;
 
 
@@ -111,11 +111,22 @@ public class Person {
          */
 
 
-        Address address = passport.getAddress();
+//        Address address = passport.getAddress();
 
-        return address.getCountry() + " " + address.getPostcode() + " " +
-                address.getOblast() + " " + address.getDistrict() + " " + address.getCity() + " " + address.getStreet() + " " +
+        /*  TODO (Проверка №2)    
+            Лишнее поле address (я закоментировал), оно уже есть в классе Person
+            без него все работает.
+        */
+
+        return address.getCountry() + " " + address.getPostcode()  +
+                ((address.getOblast()== null) ? " " : address.getOblast() + " ") + ((address.getDistrict()==null) ? " ":
+                address.getDistrict() + " ") + address.getCity() + " " + address.getStreet() + " " +
                 address.getHouse() + "  " + address.getBlock() + " " + address.getApt();
+        
+        /*  TODO (Проверка №1)
+            При выводе адресса null не надо выводить
+            Исправить логигу метода. ИСПРАВЛЕНО
+        */
     }
 
 
